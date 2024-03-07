@@ -131,6 +131,9 @@ table {
   box-sizing: border-box;
 }
 
+body{
+    overflow: hidden;
+}
 /* //////////////////////////// */
 :root {
     --text: #0b0906;
@@ -316,6 +319,7 @@ svg {
     cursor: pointer;
     background-color: transparent;
     border: none;
+    padding: 4%;
     transition: scale 0.3s ease;
 }
 
