@@ -4,28 +4,42 @@ const btn_new=document.querySelector('#new_button')
 const left=document.querySelector('#left');
 const form=document.querySelector('#form');
 
+
 // /////////////////////////////////////////////////////////
 
 function displayBooks(lib){
 
     grid.innerHTML='';
+    let i=0;
     lib.forEach(book => {
         let card=document.createElement('div');
+        card.setAttribute('id',`a${i}`);
         card.style.width='150px';
-        card.style.backgroundColor='black';
-        card.style.color='white'
-        card.style.height='150px';
+        card.style.backgroundColor='#a89374';
+        card.style.color='#fcfbf9'
+        card.style.height='190px';
         card.style.borderRadius='10px';
-        card.style.padding='1%';
+        card.style.padding='3%';
         card.style.lineHeight='1.9rem'
         card.style.display='flex';
-        card.style.fontSize='0.8rem';
+        card.style.fontSize='0.9rem';
         card.style.alignItems='center';
         card.style.justifyContent='center';      
-        card.style.borderLeft='10px solid orange';  
+        card.style.borderLeft='10px solid #d9ad6b';  
+        card.style.flexDirection='column';
+        card.style.justifyContent='space-between';
+        card.style.fontWeight='500';
         card.style.boxShadow='0 5px 5px rgba(0, 0, 0, 0.5)';
         card.innerHTML= formatInfo(book).replace(/\n/g, '<br>');
+
+        const deleteButton = card.querySelector('#delete');
+        deleteButton.addEventListener('click', () => {
+            let ind=parseInt((card.id).substring(1));
+            console.log(ind);
+            removeBook(ind); 
+        });
         grid.appendChild(card);
+        i=i+1;
     });
 }
 
@@ -45,10 +59,13 @@ function addBookToLibrary(book){
 }
 
 function formatInfo(book){
-    return `Title : ${book.title}\nAuthor: ${book.author}\nGenre: ${book.genre}\nPages: ${book.pages}`;
+    return `Title : ${book.title}\nAuthor: ${book.author}\nGenre: ${book.genre}\nPages: ${book.pages} <button id='delete'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg></button>`;
 }
 
-
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    displayBooks(myLibrary); 
+}
 
 // ///////////////////////////////////////////////////////
 
@@ -61,8 +78,9 @@ function formatInfo(book){
 // })
 
 btn_new.addEventListener('click',()=>{
-    form.style.display='flex';
+    form.classList.toggle('show')
 })
+
 
 
 form.addEventListener('submit',function(event){
@@ -79,13 +97,19 @@ form.addEventListener('submit',function(event){
     displayBooks(myLibrary);
 
     form.reset();
-    form.style.display='none';
+    form.classList.toggle('show')
 })
 
 // //////////////////////////////////////////////////
 
+// btn_delete.addEventListener('click',(event)=>{
+//     let cardId = event.target.closest('div').id;
+//     console.log(cardId);
+//     let del_elem=document.querySelector(`#a${cardId}`);
+//     del_elem.remove();
+// })
 
-
+// /////////////////////////////
 // displayBooks(myLibrary);
 
 // console.log(myLibrary[0]);
