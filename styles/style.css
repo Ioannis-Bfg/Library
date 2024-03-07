@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ///////////////////////////////////////////////////////////////// */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+svg{
+    fill: #ffffff;
+    width:60px;
+    height: 60px;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height:100vh;
+    font-family: 'Roboto',sans-serif;
+}
+
+#left{
+    background-color: aqua;
+    height:100%;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+}
+
+#right{
+    height:100%;
+    background-color: brown;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+#top{
+    background-color: black;
+    color:white;
+    font-size: 3rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+#bottom{
+    background-color: blueviolet;
+    padding: 2%;
+    height:100%;
+    display: flex;
+}
+#grid{
+    background-color: white;
+    border-radius: 20px;
+    border: 10px solid white;
+    height:75vh;
+    width:77vw;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+    column-gap:20px;
+    /* flex-wrap: wrap; */
+    row-gap: 20px;
+    align-content: flex-start;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+#new_button{
+    padding: 2%;
+    border: transparent;
+    background-color: coral;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Roboto';
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#form{
+    padding: 2%;
+    display: none;
+    flex-direction: column;
+    gap:10px
+}
+
+#form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#form input:focus {
+    border-color: dodgerblue;
+    outline: none;
+}
+
+#form button{
+    padding: 2%;
+    border: none;
+
+}

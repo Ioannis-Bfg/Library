@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="left">
+            <button id="new_button">New Book</button>
+            <form id="form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" required>
+
+                <label for="genre">Genre:</label>
+                <input type="text" name="genre" id="genre" required>
+
+                <label for="pages">Pages:</label>
+                <input type="text" name="pages" id="pages" required>
+
+                <button type="submit">Add New Book</button>
+            </form>
+        </div>
+        <div id="right">
+            <div id="top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>library</title><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+                <p>The Library</p>
+            </div>
+            <div id="bottom">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="code/script.js"></script>
+</html>
