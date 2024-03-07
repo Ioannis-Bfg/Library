@@ -38,6 +38,16 @@ function displayBooks(lib){
             console.log(ind);
             removeBook(ind); 
         });
+
+        const readButton=card.querySelector('#read');
+        readButton.addEventListener('click',()=>{
+            readButton.style.backgroundColor='green';
+            readButton.style.borderRadius='5px';
+            console.log(book.status);
+            book.status=true;
+            console.log(book.status);
+            readButton.classList.add('disable-hover');
+        })
         grid.appendChild(card);
         i=i+1;
     });
@@ -59,7 +69,7 @@ function addBookToLibrary(book){
 }
 
 function formatInfo(book){
-    return `Title : ${book.title}\nAuthor: ${book.author}\nGenre: ${book.genre}\nPages: ${book.pages} <button id='delete'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg></button>`;
+    return `Title : ${book.title}\nAuthor: ${book.author}\nGenre: ${book.genre}\nPages: ${book.pages} <button id='delete'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg></button><button id='read'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>read</title><path d="M21.59,11.59L23,13L13.5,22.5L8.42,17.41L9.83,16L13.5,19.68L21.59,11.59M4,16V3H6L9,3A4,4 0 0,1 13,7C13,8.54 12.13,9.88 10.85,10.55L14,16H12L9.11,11H6V16H4M6,9H9A2,2 0 0,0 11,7A2,2 0 0,0 9,5H6V9Z" /></svg></button>`;
 }
 
 function removeBook(index) {
