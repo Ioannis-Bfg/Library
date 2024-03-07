@@ -41,12 +41,16 @@ function displayBooks(lib){
 
         const readButton=card.querySelector('#read');
         readButton.addEventListener('click',()=>{
-            readButton.style.backgroundColor='green';
-            readButton.style.borderRadius='5px';
-            console.log(book.status);
-            book.status=true;
-            console.log(book.status);
-            readButton.classList.add('disable-hover');
+
+            if(book.status){
+                book.status=false;
+                readButton.style.backgroundColor='transparent';
+            } else{
+                readButton.style.backgroundColor='green';
+                readButton.style.borderRadius='5px';
+                book.status=true;
+            }
+
         })
         grid.appendChild(card);
         i=i+1;
